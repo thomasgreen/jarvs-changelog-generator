@@ -664,7 +664,7 @@ export default {
                 link: "",
                 description_type: "internal",
                 site_type: "all",
-                release_priority: "p1",
+                release_priority: "p3",
                 cdesecurity: "not impacted",
                 privacy: "not impacted",
                 complexity: "simple",
