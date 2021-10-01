@@ -1,7 +1,5 @@
 <template>
 <div class="mt-1">
-
-
     <input
         :id="name"
         :name="name"

@@ -6,6 +6,7 @@
         >
             <div class="space-y-8 divide-y divide-gray-200">
                 <div>
+                    {{ formData }}
                     <div>
                         <h3 class="text-lg leading-6 font-medium text-gray-900">
                             Description
@@ -31,33 +32,17 @@
                             />
                         </div>
 
-                        <div class="sm:col-span-3">
+                        <div class="sm:col-span-6">
                             <FormLabel for="description_type">
                                 Description Type
                             </FormLabel>
 
-                            <div class="mt-1">
-                                <select
-                                    id="description_type"
-                                    name="description_type"
-                                    autocomplete="description_type"
-                                    v-model="formData.description_type"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
-                                >
-                                    <option>internal</option>
-                                    <option>addition</option>
-                                    <option>bug</option>
-                                </select>
-                            </div>
+                            <FormInputSelect
+                                id="description_type"
+                                v-model="formData.description_type"
+                                :options="options.description_type"
+                                :selectedKey="formData.description_type"
+                            />
                         </div>
                     </div>
                 </div>
@@ -552,6 +537,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import {
     TransitionRoot,
     TransitionChild,
@@ -563,6 +549,7 @@ import {
 import FormLabel from "../components/FormLabel.vue";
 import FormTextArea from "../components/FormTextArea.vue";
 import FormInputText from "../components/FormInputText.vue";
+import FormInputSelect from "../components/FormRadioGroup.vue";
 
 export default {
     components: {
@@ -574,6 +561,7 @@ export default {
         FormLabel,
         FormTextArea,
         FormInputText,
+        FormInputSelect,
     },
     computed: {
         renderedOutput() {
@@ -602,7 +590,7 @@ export default {
             formData: {
                 description: "text",
                 link: "",
-                description_type: "internal",
+                description_type: "addition",
                 site_type: "all",
                 release_priority: "p3",
                 cdesecurity: "not impacted",
@@ -611,6 +599,20 @@ export default {
                 team: "optimisation",
                 device_type: "all",
                 module: "core",
+            },
+            options: {
+                description_type: [
+                    {
+                        id: "internal",
+                        label: "Internal",
+                        description: "lorem ipsum delorem est",
+                    },
+                    {
+                        id: "addition",
+                        label: "Addition",
+                        description: "random string goes here",
+                    },
+                ],
             },
         };
     },
