@@ -22,6 +22,6 @@
     "@vitejs/plugin-vue": "^1.9.2",
     "autoprefixer": "^10.3.6",
     "tailwindcss": "^2.2.16",
-    "vite": "^2.6.1"
+    "vite": "^2.6.2"
   }
 }
