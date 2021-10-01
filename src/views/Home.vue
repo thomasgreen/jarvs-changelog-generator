@@ -4,6 +4,7 @@
             class="space-y-8 divide-y divide-gray-200"
             @submit.prevent="submitted"
         >
+            <FormSection></FormSection>
             <div class="space-y-8 divide-y divide-gray-200">
                 <div>
                     <div>
@@ -21,12 +22,10 @@
                         "
                     >
                         <div class="sm:col-span-6">
-                            <label
-                                for="description"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="description">
                                 Description
-                            </label>
+                            </FormLabel>
+
                             <div class="mt-1">
                                 <textarea
                                     id="description"
@@ -49,12 +48,10 @@
                         </div>
 
                         <div class="sm:col-span-3">
-                            <label
-                                for="description_type"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="description_type">
                                 Description Type
-                            </label>
+                            </FormLabel>
+
                             <div class="mt-1">
                                 <select
                                     id="description_type"
@@ -303,12 +300,10 @@
                         </div>
 
                         <div class="sm:col-span-4">
-                            <label
-                                for="release_priority"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="release_priority">
                                 Release Priority
-                            </label>
+                            </FormLabel>
+
                             <div class="mt-1">
                                 <select
                                     id="release_priority"
@@ -334,12 +329,10 @@
                         </div>
 
                         <div class="sm:col-span-3">
-                            <label
-                                for="device_type"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="device_type">
                                 Device Type
-                            </label>
+                            </FormLabel>
+
                             <div class="mt-1">
                                 <select
                                     id="device_type"
@@ -367,12 +360,10 @@
                         </div>
 
                         <div class="sm:col-span-3">
-                            <label
-                                for="site_type"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="site_type">
                                 Site Type
-                            </label>
+                            </FormLabel>
+
                             <div class="mt-1">
                                 <select
                                     id="site_type"
@@ -398,12 +389,9 @@
                         </div>
 
                         <div class="sm:col-span-4">
-                            <label
-                                for="link"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="link">
                                 Link
-                            </label>
+                            </FormLabel>
                             <div class="mt-1">
                                 <input
                                     id="link"
@@ -427,12 +415,10 @@
                         </div>
 
                         <div class="sm:col-span-4">
-                            <label
-                                for="module"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="module">
                                 Module
-                            </label>
+                            </FormLabel>
+
                             <div class="mt-1">
                                 <input
                                     id="module"
@@ -456,12 +442,9 @@
                         </div>
 
                         <div class="sm:col-span-4">
-                            <label
-                                for="team"
-                                class="block text-sm font-medium text-gray-700"
-                            >
+                            <FormLabel for="team">
                                 Team
-                            </label>
+                            </FormLabel>
                             <div class="mt-1">
                                 <input
                                     id="team"
@@ -513,7 +496,6 @@
                         Save
                     </button>
                 </div>
-
             </div>
         </form>
 
@@ -578,9 +560,13 @@
                                     Succesfully Copied to Clipboard
                                 </DialogTitle>
                                 <div class="mt-2">
-                                    <pre class="text-sm text-gray-500 white-space-pre-wrap" v-html="renderedOutput"/>
-
-
+                                    <pre
+                                        class="
+                                            text-sm text-gray-500
+                                            white-space-pre-wrap
+                                        "
+                                        v-html="renderedOutput"
+                                    />
                                 </div>
 
                                 <div class="mt-4">
@@ -618,7 +604,6 @@
 </template>
 
 <script>
-import { ref } from "vue";
 import {
     TransitionRoot,
     TransitionChild,
@@ -627,6 +612,8 @@ import {
     DialogTitle,
 } from "@headlessui/vue";
 
+import FormLabel from '../components/FormLabel.vue';
+
 export default {
     components: {
         TransitionRoot,
@@ -634,6 +621,7 @@ export default {
         Dialog,
         DialogOverlay,
         DialogTitle,
+        FormLabel
     },
     computed: {
         renderedOutput() {
