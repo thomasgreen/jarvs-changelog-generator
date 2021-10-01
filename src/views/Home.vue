@@ -4,7 +4,6 @@
             class="space-y-8 divide-y divide-gray-200"
             @submit.prevent="submitted"
         >
-            <FormSection></FormSection>
             <div class="space-y-8 divide-y divide-gray-200">
                 <div>
                     <div>
@@ -12,7 +11,7 @@
                             Description
                         </h3>
                     </div>
-
+                    {{ formData }}
                     <div
                         class="
                             mt-6
@@ -26,25 +25,11 @@
                                 Description
                             </FormLabel>
 
-                            <div class="mt-1">
-                                <textarea
-                                    id="description"
-                                    name="description"
-                                    required
-                                    v-model="formData.description"
-                                    rows="3"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border border-gray-300
-                                        rounded-md
-                                    "
-                                />
-                            </div>
+                            <FormTextArea
+                                name="description"
+                                v-model="formData.description"
+                                required
+                            />
                         </div>
 
                         <div class="sm:col-span-3">
@@ -360,9 +345,7 @@
                         </div>
 
                         <div class="sm:col-span-3">
-                            <FormLabel for="site_type">
-                                Site Type
-                            </FormLabel>
+                            <FormLabel for="site_type"> Site Type </FormLabel>
 
                             <div class="mt-1">
                                 <select
@@ -389,9 +372,7 @@
                         </div>
 
                         <div class="sm:col-span-4">
-                            <FormLabel for="link">
-                                Link
-                            </FormLabel>
+                            <FormLabel for="link"> Link </FormLabel>
                             <div class="mt-1">
                                 <input
                                     id="link"
@@ -415,9 +396,7 @@
                         </div>
 
                         <div class="sm:col-span-4">
-                            <FormLabel for="module">
-                                Module
-                            </FormLabel>
+                            <FormLabel for="module"> Module </FormLabel>
 
                             <div class="mt-1">
                                 <input
@@ -442,9 +421,7 @@
                         </div>
 
                         <div class="sm:col-span-4">
-                            <FormLabel for="team">
-                                Team
-                            </FormLabel>
+                            <FormLabel for="team"> Team </FormLabel>
                             <div class="mt-1">
                                 <input
                                     id="team"
@@ -612,7 +589,8 @@ import {
     DialogTitle,
 } from "@headlessui/vue";
 
-import FormLabel from '../components/FormLabel.vue';
+import FormLabel from "../components/FormLabel.vue";
+import FormTextArea from "../components/FormTextArea.vue";
 
 export default {
     components: {
@@ -621,7 +599,8 @@ export default {
         Dialog,
         DialogOverlay,
         DialogTitle,
-        FormLabel
+        FormLabel,
+        FormTextArea,
     },
     computed: {
         renderedOutput() {
@@ -648,7 +627,7 @@ export default {
             isOpen: false,
             output: "",
             formData: {
-                description: "",
+                description: "text",
                 link: "",
                 description_type: "internal",
                 site_type: "all",
