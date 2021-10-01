@@ -23,7 +23,6 @@
 
 <script>
 export default {
-    props: [''],
   emits: ['update:modelValue'],
     props: {
         modelValue: {
@@ -32,18 +31,9 @@ export default {
         name: {
             type: String,
         },
-        value: {
-            type: String,
-        },
         required: {
             type: Boolean,
             default: false,
-        },
-    },
-
-    methods: {
-        updateValue: function (value) {
-            this.$emit("input", value);
         },
     },
 };

@@ -11,7 +11,6 @@
                             Description
                         </h3>
                     </div>
-                    {{ formData }}
                     <div
                         class="
                             mt-6
@@ -373,51 +372,23 @@
 
                         <div class="sm:col-span-4">
                             <FormLabel for="link"> Link </FormLabel>
-                            <div class="mt-1">
-                                <input
-                                    id="link"
-                                    required
-                                    name="link"
-                                    type="text"
-                                    v-model="formData.link"
-                                    autocomplete="link"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
-                                />
-                            </div>
+                            <FormInputText
+                                name="link"
+                                v-model="formData.link"
+                                required
+                                autocomplete="link"
+                            />
                         </div>
 
                         <div class="sm:col-span-4">
                             <FormLabel for="module"> Module </FormLabel>
 
-                            <div class="mt-1">
-                                <input
-                                    id="module"
-                                    name="module"
-                                    required
-                                    v-model="formData.module"
-                                    type="text"
-                                    autocomplete="module"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
-                                />
-                            </div>
+                            <FormInputText
+                                name="module"
+                                v-model="formData.module"
+                                required
+                                autocomplete="module"
+                            />
                         </div>
 
                         <div class="sm:col-span-4">
@@ -591,6 +562,7 @@ import {
 
 import FormLabel from "../components/FormLabel.vue";
 import FormTextArea from "../components/FormTextArea.vue";
+import FormInputText from "../components/FormInputText.vue";
 
 export default {
     components: {
@@ -601,6 +573,7 @@ export default {
         DialogTitle,
         FormLabel,
         FormTextArea,
+        FormInputText,
     },
     computed: {
         renderedOutput() {
