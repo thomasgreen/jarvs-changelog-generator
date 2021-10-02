@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-1">
+    <div class="mt-1 sm:mt-0 sm:col-span-2 max-w-lg">
         <Listbox v-model="selected">
             <div class="relative mt-1">
                 <ListboxButton

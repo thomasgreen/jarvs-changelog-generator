@@ -1,25 +1,17 @@
 <template>
-    <div class="max-w-3xl mx-auto">
+    <div>
         <form
-            class="space-y-8 divide-y divide-gray-200"
+            class="space-y-8 divide-y divide-gray-200 max-w-3xl mx-auto"
             @submit.prevent="submitted"
         >
-            <div class="space-y-8 divide-y divide-gray-200">
+            <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
                 <div>
-                    <div>
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">
-                            Description
-                        </h3>
-                    </div>
-                    <div
-                        class="
-                            mt-6
-                            grid grid-cols-1
-                            gap-y-6 gap-x-4
-                            sm:grid-cols-6
-                        "
-                    >
-                        <div class="sm:col-span-6">
+                    <FormSectionHeader title="Description">
+                       Please provide a description of the changes made in your Pull Request.
+                    </FormSectionHeader>
+
+                    <FormInputGroup>
+                        <FormInputWrapper>
                             <FormLabel for="description">
                                 Description
                             </FormLabel>
@@ -29,21 +21,21 @@
                                 v-model="formData.description"
                                 required
                             />
-                        </div>
+                        </FormInputWrapper>
 
-                        <div class="sm:col-span-6">
+                        <FormInputWrapper>
                             <FormLabel for="description_type">
                                 Description Type
                             </FormLabel>
 
-                            <FormRadioGroup
+                             <FormRadioGroup
                                 id="description_type"
                                 v-model="formData.description_type"
                                 :options="options.description_type"
                                 :selectedKey="formData.description_type"
                             />
-                        </div>
-                    </div>
+                        </FormInputWrapper>
+                    </FormInputGroup>
                 </div>
 
                 <div class="pt-8">
@@ -314,6 +306,9 @@ import FormTextArea from "../components/FormTextArea.vue";
 import FormInputText from "../components/FormInputText.vue";
 import FormRadioGroup from "../components/FormRadioGroup.vue";
 import FormInputSelect from "../components/FormInputSelect.vue";
+import FormSectionHeader from "../components/FormSectionHeader.vue";
+import FormInputGroup from "../components/FormInputGroup.vue";
+import FormInputWrapper from "../components/FormInputWrapper.vue";
 
 export default {
     components: {
@@ -327,6 +322,9 @@ export default {
         FormInputText,
         FormRadioGroup,
         FormInputSelect,
+        FormSectionHeader,
+        FormInputGroup,
+        FormInputWrapper
     },
     computed: {
         renderedOutput() {
@@ -438,15 +436,30 @@ export default {
                 ],
                 description_type: [
                     {
-                        id: "internal",
-                        label: "Internal",
-                        description: "lorem ipsum delorem est",
-                    },
-                    {
                         id: "addition",
                         label: "Addition",
-                        description: "random string goes here",
+                        description: "If your change adds new functionality. This will be public by default.",
                     },
+                    {
+                        id: "bug",
+                        label: "Bug",
+                        description: "For a change that fixes an OSD, Fatal Error etc.",
+                    },
+                    {
+                        id: "internal",
+                        label: "Internal",
+                        description: "For Changes that have no impact on clients.",
+                    },
+                    {
+                        id: "issue",
+                        label: "Issue",
+                        description: "Something that isn't working as expected such as a broken link or unstyled element. This will be public by default.",
+                    },
+                    {
+                        id: "update",
+                        label: "Update",
+                        description: "If your change updates existing functionality. This will be public by default."
+                    }
                 ],
                 team: [
                     {
