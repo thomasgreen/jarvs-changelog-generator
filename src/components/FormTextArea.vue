@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-1">
+    <div class="mt-1 sm:mt-0 sm:col-span-2 max-w-lg">
         <textarea
             :name="name"
             :required="required"
@@ -8,8 +8,8 @@
             rows="3"
             class="
                 shadow-sm
-                focus:ring-indigo-500
-                focus:border-indigo-500
+                focus:ring-primary
+                focus:border-primary
                 block
                 w-full
                 sm:text-sm

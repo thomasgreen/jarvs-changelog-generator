@@ -1,25 +1,18 @@
 <template>
-    <div class="max-w-3xl mx-auto">
+    <div>
         <form
-            class="space-y-8 divide-y divide-gray-200"
+            class="space-y-8 divide-y divide-gray-200 max-w-3xl mx-auto"
             @submit.prevent="submitted"
         >
-            <div class="space-y-8 divide-y divide-gray-200">
+            <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
                 <div>
-                    <div>
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">
-                            Description
-                        </h3>
-                    </div>
-                    <div
-                        class="
-                            mt-6
-                            grid grid-cols-1
-                            gap-y-6 gap-x-4
-                            sm:grid-cols-6
-                        "
-                    >
-                        <div class="sm:col-span-6">
+                    <FormSectionHeader title="Description">
+                        Please provide a description of the changes made in your
+                        Pull Request.
+                    </FormSectionHeader>
+
+                    <FormInputGroup>
+                        <FormInputWrapper>
                             <FormLabel for="description">
                                 Description
                             </FormLabel>
@@ -29,9 +22,9 @@
                                 v-model="formData.description"
                                 required
                             />
-                        </div>
+                        </FormInputWrapper>
 
-                        <div class="sm:col-span-6">
+                        <FormInputWrapper>
                             <FormLabel for="description_type">
                                 Description Type
                             </FormLabel>
@@ -42,25 +35,89 @@
                                 :options="options.description_type"
                                 :selectedKey="formData.description_type"
                             />
-                        </div>
-                    </div>
+                        </FormInputWrapper>
+                    </FormInputGroup>
                 </div>
 
-                <div class="pt-8">
-                    <div>
-                        <h3 class="text-lg leading-6 font-medium text-gray-900">
-                            Changes Information
-                        </h3>
-                    </div>
-                    <div
-                        class="
-                            mt-6
-                            grid grid-cols-2
-                            gap-y-6 gap-x-4
-                            sm:grid-cols-6
-                        "
-                    >
-                        <div class="sm:col-span-6">
+                <div>
+                    <FormSectionHeader title="Link & Module">
+                        Please provide what page and module have been affected.
+                    </FormSectionHeader>
+
+                    <FormInputGroup>
+                        <FormInputWrapper>
+                            <FormLabel for="link"> Link </FormLabel>
+                            <FormInputText
+                                name="link"
+                                v-model="formData.link"
+                                required
+                                autocomplete="link"
+                            />
+                        </FormInputWrapper>
+
+                        <FormInputWrapper>
+                            <FormLabel for="module"> Module </FormLabel>
+
+                            <FormInputText
+                                name="module"
+                                v-model="formData.module"
+                                required
+                                autocomplete="module"
+                            />
+                        </FormInputWrapper>
+
+                        <FormInputWrapper
+                            ><FormLabel for="device_type">
+                                Device Type
+                            </FormLabel>
+
+                            <FormInputSelect
+                                id="device_type"
+                                v-model="formData.device_type"
+                                :options="options.device_type"
+                                :selectedKey="formData.device_type"
+                            />
+                        </FormInputWrapper>
+
+                        <FormInputWrapper>
+                            <FormLabel for="site_type"> Site Type </FormLabel>
+
+                            <FormInputSelect
+                                id="site_type"
+                                v-model="formData.site_type"
+                                :options="options.site_type"
+                                :selectedKey="formData.site_type"
+                            />
+                        </FormInputWrapper>
+                    </FormInputGroup>
+                </div>
+
+                <div>
+                    <FormSectionHeader title="Team">
+                        Select your engineering team.
+                    </FormSectionHeader>
+
+                    <FormInputGroup>
+                        <FormInputWrapper>
+                            <FormLabel for="team"> Team </FormLabel>
+
+                            <FormInputSelect
+                                v-model="formData.team"
+                                :options="options.team"
+                                :selectedKey="formData.team"
+                            />
+                        </FormInputWrapper>
+                    </FormInputGroup>
+                </div>
+
+                <div>
+                    <FormSectionHeader title="Platform Impact">
+                        Please select if the platform is impacted in a way that
+                        requires further reviw.
+                    </FormSectionHeader>
+
+                    <FormInputGroup>
+                        <FormInputWrapper>
                             <FormLabel for="cdesecurity">
                                 CDE Security
                             </FormLabel>
@@ -71,9 +128,9 @@
                                 :options="options.impacted"
                                 :selectedKey="formData.cdesecurity"
                             />
-                        </div>
+                        </FormInputWrapper>
 
-                        <div class="sm:col-span-6">
+                        <FormInputWrapper>
                             <FormLabel for="privacy"> Privacy </FormLabel>
 
                             <FormRadioGroup
@@ -82,9 +139,9 @@
                                 :options="options.impacted"
                                 :selectedKey="formData.privacy"
                             />
-                        </div>
+                        </FormInputWrapper>
 
-                        <div class="sm:col-span-6">
+                        <FormInputWrapper>
                             <FormLabel for="complexity"> Complexity </FormLabel>
 
                             <FormRadioGroup
@@ -93,9 +150,17 @@
                                 :options="options.complexity"
                                 :selectedKey="formData.complexity"
                             />
-                        </div>
+                        </FormInputWrapper>
+                    </FormInputGroup>
+                </div>
 
-                        <div class="sm:col-span-6">
+                <div>
+                    <FormInputGroup>
+                        <FormSectionHeader title="Release Priortiy">
+                            This should be used so, at a glance, someone can see how important this change is.
+                        </FormSectionHeader>
+
+                        <FormInputWrapper>
                             <FormLabel for="complexity">
                                 Release Priority
                             </FormLabel>
@@ -106,62 +171,8 @@
                                 :options="options.priority"
                                 :selectedKey="formData.release_priority"
                             />
-                        </div>
-
-                        <div class="sm:col-span-3">
-                            <FormLabel for="device_type">
-                                Device Type
-                            </FormLabel>
-
-                            <FormInputSelect
-                                id="device_type"
-                                v-model="formData.device_type"
-                                :options="options.device_type"
-                                :selectedKey="formData.device_type"
-                            />
-                        </div>
-                        <div class="sm:col-span-3">
-                            <FormLabel for="site_type"> Site Type </FormLabel>
-
-                            <FormInputSelect
-                                id="site_type"
-                                v-model="formData.site_type"
-                                :options="options.site_type"
-                                :selectedKey="formData.site_type"
-                            />
-                        </div>
-
-                        <div class="sm:col-span-4">
-                            <FormLabel for="link"> Link </FormLabel>
-                            <FormInputText
-                                name="link"
-                                v-model="formData.link"
-                                required
-                                autocomplete="link"
-                            />
-                        </div>
-
-                        <div class="sm:col-span-4">
-                            <FormLabel for="module"> Module </FormLabel>
-
-                            <FormInputText
-                                name="module"
-                                v-model="formData.module"
-                                required
-                                autocomplete="module"
-                            />
-                        </div>
-
-                        <div class="sm:col-span-4">
-                            <FormLabel for="team"> Team </FormLabel>
-
-                            <FormInputSelect
-                                v-model="formData.team"
-                                :options="options.team"
-                                :selectedKey="formData.team"
-                            />
-                        </div>
-                    </div>
+                        </FormInputWrapper>
+                    </FormInputGroup>
                 </div>
             </div>
 
@@ -181,15 +192,15 @@
                             font-medium
                             rounded-md
                             text-white
-                            bg-indigo-600
-                            hover:bg-indigo-700
+                            bg-primary
+                            hover:bg-primary
                             focus:outline-none
                             focus:ring-2
                             focus:ring-offset-2
-                            focus:ring-indigo-500
+                            focus:ring-primary
                         "
                     >
-                        Save
+                        Generate Changelog
                     </button>
                 </div>
             </div>
@@ -275,15 +286,15 @@
                                             py-2
                                             text-sm
                                             font-medium
-                                            text-blue-900
-                                            bg-blue-100
+                                            text-primary
+                                            bg-primary-alt
                                             border border-transparent
                                             rounded-md
-                                            hover:bg-blue-200
+                                            hover:bg-primary-alt
                                             focus:outline-none
                                             focus-visible:ring-2
                                             focus-visible:ring-offset-2
-                                            focus-visible:ring-blue-500
+                                            focus-visible:ring-primary
                                         "
                                         @click="closeModal"
                                     >
@@ -314,6 +325,9 @@ import FormTextArea from "../components/FormTextArea.vue";
 import FormInputText from "../components/FormInputText.vue";
 import FormRadioGroup from "../components/FormRadioGroup.vue";
 import FormInputSelect from "../components/FormInputSelect.vue";
+import FormSectionHeader from "../components/FormSectionHeader.vue";
+import FormInputGroup from "../components/FormInputGroup.vue";
+import FormInputWrapper from "../components/FormInputWrapper.vue";
 
 export default {
     components: {
@@ -327,6 +341,9 @@ export default {
         FormInputText,
         FormRadioGroup,
         FormInputSelect,
+        FormSectionHeader,
+        FormInputGroup,
+        FormInputWrapper,
     },
     computed: {
         renderedOutput() {
@@ -438,20 +455,96 @@ export default {
                 ],
                 description_type: [
                     {
-                        id: "internal",
-                        label: "Internal",
-                        description: "lorem ipsum delorem est",
-                    },
-                    {
                         id: "addition",
                         label: "Addition",
-                        description: "random string goes here",
+                        description:
+                            "If your change adds new functionality. This will be public by default.",
+                    },
+                    {
+                        id: "bug",
+                        label: "Bug",
+                        description:
+                            "For a change that fixes an OSD, Fatal Error etc.",
+                    },
+                    {
+                        id: "internal",
+                        label: "Internal",
+                        description:
+                            "For Changes that have no impact on clients.",
+                    },
+                    {
+                        id: "issue",
+                        label: "Issue",
+                        description:
+                            "Something that isn't working as expected such as a broken link or unstyled element. This will be public by default.",
+                    },
+                    {
+                        id: "update",
+                        label: "Update",
+                        description:
+                            "If your change updates existing functionality. This will be public by default.",
                     },
                 ],
                 team: [
                     {
+                        id: "api",
+                        label: "API Team",
+                    },
+                    {
+                        id: "architects",
+                        label: "Architects",
+                    },
+                    {
+                        id: "checkout",
+                        label: "Checkout Team",
+                    },
+                    {
+                        id: "client_features",
+                        label: "Client Features",
+                    },
+                    {
+                        id: "core_product",
+                        label: "Core Product",
+                    },
+                    {
+                        id: "customer_ar",
+                        label: "Customer AR Team",
+                    },
+                    {
+                        id: "epos",
+                        label: "EPOS team",
+                    },
+                    {
+                        id: "mobile_app",
+                        label: "Mobile App Team",
+                    },
+                    {
+                        id: "multi_channel",
+                        label: "Multi Channel Team",
+                    },
+                    {
                         id: "optimisation",
                         label: "Optimisation Team",
+                    },
+                    {
+                        id: "partnerships",
+                        label: "Partnerships",
+                    },
+                    {
+                        id: "platform",
+                        label: "Platform",
+                    },
+                    {
+                        id: "pm_build",
+                        label: "PM Build",
+                    },
+                    {
+                        id: "pm_testing",
+                        label: "PM Testing",
+                    },
+                    {
+                        id: "product_discovery",
+                        label: "Product Discovery Team",
                     },
                     {
                         id: "projects",
