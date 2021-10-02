@@ -8,8 +8,8 @@
             rows="3"
             class="
                 shadow-sm
-                focus:ring-indigo-500
-                focus:border-indigo-500
+                focus:ring-primary
+                focus:border-primary
                 block
                 w-full
                 sm:text-sm

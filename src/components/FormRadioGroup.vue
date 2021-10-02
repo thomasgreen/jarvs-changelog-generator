@@ -15,7 +15,7 @@
                             ? 'rounded-bl-md rounded-br-md'
                             : '',
                         checked
-                            ? 'bg-indigo-50 border-indigo-200 z-10'
+                            ? 'bg-primary-alt text-primary z-10'
                             : 'border-gray-200',
                         'relative border p-4 flex cursor-pointer focus:outline-none',
                     ]"
@@ -23,10 +23,10 @@
                     <span
                         :class="[
                             checked
-                                ? 'bg-indigo-600 border-transparent'
+                                ? 'bg-primary border-transparent'
                                 : 'bg-white border-gray-300',
                             active
-                                ? 'ring-2 ring-offset-2 ring-indigo-500'
+                                ? 'ring-2 ring-offset-2 ring-primary'
                                 : '',
                             'h-4 w-4 mt-0.5 mr-3 cursor-pointer rounded-full border flex  flex-none items-center justify-center',
                         ]"
@@ -38,7 +38,7 @@
                         <RadioGroupLabel
                             as="span"
                             :class="[
-                                checked ? 'text-indigo-900' : 'text-gray-900',
+                                checked ? 'text-primary' : 'text-gray-900',
                                 'block text-sm font-medium',
                             ]"
                         >
@@ -47,7 +47,7 @@
                         <RadioGroupDescription
                             as="span"
                             :class="[
-                                checked ? 'text-indigo-700' : 'text-gray-500',
+                                checked ? 'text-primary' : 'text-gray-500',
                                 'block text-sm',
                             ]"
                         >

@@ -20,7 +20,7 @@
                         focus-visible:ring-white
                         focus-visible:ring-offset-orange-300
                         focus-visible:ring-offset-2
-                        focus-visible:border-indigo-500
+                        focus-visible:border-primary
                         sm:text-sm
                     "
                 >
@@ -65,6 +65,7 @@
                             ring-1 ring-black ring-opacity-5
                             focus:outline-none
                             sm:text-sm
+                            z-20
                         "
                     >
                         <ListboxOption
@@ -77,7 +78,7 @@
                             <li
                                 :class="[
                                     active
-                                        ? 'text-indigo-900 bg-indigo-100'
+                                        ? 'text-primary bg-primary-alt'
                                         : 'text-gray-900',
                                     'cursor-default select-none relative py-2 pl-10 pr-4',
                                 ]"
