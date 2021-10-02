@@ -91,7 +91,7 @@ export default {
     setup(props, { emit }) {
         const options = props.options;
 
-        const selectedKey = options.findIndex((x) => x.id === "addition");
+        const selectedKey = options.findIndex((x) => x.id === props.selectedKey);
 
         let selected = ref(options[selectedKey]);
 

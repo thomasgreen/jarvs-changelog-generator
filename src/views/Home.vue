@@ -6,7 +6,6 @@
         >
             <div class="space-y-8 divide-y divide-gray-200">
                 <div>
-                    {{ formData }}
                     <div>
                         <h3 class="text-lg leading-6 font-medium text-gray-900">
                             Description
@@ -37,7 +36,7 @@
                                 Description Type
                             </FormLabel>
 
-                            <FormInputSelect
+                            <FormRadioGroup
                                 id="description_type"
                                 v-model="formData.description_type"
                                 :options="options.description_type"
@@ -61,240 +60,52 @@
                             sm:grid-cols-6
                         "
                     >
-                        <div class="sm:col-span-4">
-                            <div>
-                                <legend
-                                    class="text-base font-medium text-gray-900"
-                                >
-                                    cdesecurity
-                                </legend>
-                            </div>
-                            <div class="mt-4 space-y-4">
-                                <div class="flex items-center">
-                                    <input
-                                        id="cdesecurity-not-impacted"
-                                        name="cdesecurity"
-                                        v-model="formData.cdesecurity"
-                                        value="not impacted"
-                                        type="radio"
-                                        checked
-                                        class="
-                                            focus:ring-indigo-500
-                                            h-4
-                                            w-4
-                                            text-indigo-600
-                                            border-gray-300
-                                        "
-                                    />
-                                    <label
-                                        for="cdesecurity-not-impacted"
-                                        class="
-                                            ml-3
-                                            block
-                                            text-sm
-                                            font-medium
-                                            text-gray-700
-                                        "
-                                    >
-                                        Not Impacted
-                                    </label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input
-                                        id="cdesecurity-impacted"
-                                        name="cdesecurity"
-                                        v-model="formData.cdesecurity"
-                                        value="impacted"
-                                        type="radio"
-                                        class="
-                                            focus:ring-indigo-500
-                                            h-4
-                                            w-4
-                                            text-indigo-600
-                                            border-gray-300
-                                        "
-                                    />
-                                    <label
-                                        for="cdesecurity-impacted"
-                                        class="
-                                            ml-3
-                                            block
-                                            text-sm
-                                            font-medium
-                                            text-gray-700
-                                        "
-                                    >
-                                        Impacted
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="sm:col-span-6">
+                            <FormLabel for="cdesecurity">
+                                CDE Security
+                            </FormLabel>
+
+                            <FormRadioGroup
+                                id="cdesecurity"
+                                v-model="formData.cdesecurity"
+                                :options="options.impacted"
+                                :selectedKey="formData.cdesecurity"
+                            />
                         </div>
 
-                        <div class="sm:col-span-4">
-                            <div>
-                                <legend
-                                    class="text-base font-medium text-gray-900"
-                                >
-                                    privacy
-                                </legend>
-                            </div>
-                            <div class="mt-4 space-y-4">
-                                <div class="flex items-center">
-                                    <input
-                                        id="privacy-not-impacted"
-                                        name="privacy"
-                                        v-model="formData.privacy"
-                                        value="not impacted"
-                                        type="radio"
-                                        checked
-                                        class="
-                                            focus:ring-indigo-500
-                                            h-4
-                                            w-4
-                                            text-indigo-600
-                                            border-gray-300
-                                        "
-                                    />
-                                    <label
-                                        for="privacy-not-impacted"
-                                        class="
-                                            ml-3
-                                            block
-                                            text-sm
-                                            font-medium
-                                            text-gray-700
-                                        "
-                                    >
-                                        Not Impacted
-                                    </label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input
-                                        id="privacy-impacted"
-                                        name="privacy"
-                                        v-model="formData.privacy"
-                                        value="impacted"
-                                        type="radio"
-                                        class="
-                                            focus:ring-indigo-500
-                                            h-4
-                                            w-4
-                                            text-indigo-600
-                                            border-gray-300
-                                        "
-                                    />
-                                    <label
-                                        for="privacy-impacted"
-                                        class="
-                                            ml-3
-                                            block
-                                            text-sm
-                                            font-medium
-                                            text-gray-700
-                                        "
-                                    >
-                                        Impacted
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="sm:col-span-6">
+                            <FormLabel for="privacy"> Privacy </FormLabel>
+
+                            <FormRadioGroup
+                                id="privacy"
+                                v-model="formData.privacy"
+                                :options="options.impacted"
+                                :selectedKey="formData.privacy"
+                            />
                         </div>
 
-                        <div class="sm:col-span-4">
-                            <div>
-                                <legend
-                                    class="text-base font-medium text-gray-900"
-                                >
-                                    complexity
-                                </legend>
-                            </div>
-                            <div class="mt-4 space-y-4">
-                                <div class="flex items-center">
-                                    <input
-                                        id="complexity-simple"
-                                        name="complexity"
-                                        v-model="formData.complexity"
-                                        value="simple"
-                                        type="radio"
-                                        checked
-                                        class="
-                                            focus:ring-indigo-500
-                                            h-4
-                                            w-4
-                                            text-indigo-600
-                                            border-gray-300
-                                        "
-                                    />
-                                    <label
-                                        for="complexity-simple"
-                                        class="
-                                            ml-3
-                                            block
-                                            text-sm
-                                            font-medium
-                                            text-gray-700
-                                        "
-                                    >
-                                        Simple
-                                    </label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input
-                                        id="complexity-complex"
-                                        name="complexity"
-                                        v-model="formData.complexity"
-                                        value="complex"
-                                        type="radio"
-                                        class="
-                                            focus:ring-indigo-500
-                                            h-4
-                                            w-4
-                                            text-indigo-600
-                                            border-gray-300
-                                        "
-                                    />
-                                    <label
-                                        for="complexity-complex"
-                                        class="
-                                            ml-3
-                                            block
-                                            text-sm
-                                            font-medium
-                                            text-gray-700
-                                        "
-                                    >
-                                        Complex
-                                    </label>
-                                </div>
-                            </div>
+                        <div class="sm:col-span-6">
+                            <FormLabel for="complexity"> Complexity </FormLabel>
+
+                            <FormRadioGroup
+                                id="complexity"
+                                v-model="formData.complexity"
+                                :options="options.complexity"
+                                :selectedKey="formData.complexity"
+                            />
                         </div>
 
-                        <div class="sm:col-span-4">
-                            <FormLabel for="release_priority">
+                        <div class="sm:col-span-6">
+                            <FormLabel for="complexity">
                                 Release Priority
                             </FormLabel>
 
-                            <div class="mt-1">
-                                <select
-                                    id="release_priority"
-                                    name="release_priority"
-                                    autocomplete="release_priority"
-                                    v-model="formData.release_priority"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
-                                >
-                                    <option>p1</option>
-                                    <option>p2</option>
-                                    <option>p3</option>
-                                </select>
-                            </div>
+                            <FormRadioGroup
+                                id="complexity"
+                                v-model="formData.release_priority"
+                                :options="options.priority"
+                                :selectedKey="formData.release_priority"
+                            />
                         </div>
 
                         <div class="sm:col-span-3">
@@ -302,57 +113,22 @@
                                 Device Type
                             </FormLabel>
 
-                            <div class="mt-1">
-                                <select
-                                    id="device_type"
-                                    name="device_type"
-                                    v-model="formData.device_type"
-                                    autocomplete="device_type"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
-                                >
-                                    <option>all</option>
-                                    <option>mobile</option>
-                                    <option>tablet</option>
-                                    <option>desktop</option>
-                                    <option>cli</option>
-                                </select>
-                            </div>
+                            <FormInputSelect
+                                id="device_type"
+                                v-model="formData.device_type"
+                                :options="options.device_type"
+                                :selectedKey="formData.device_type"
+                            />
                         </div>
-
                         <div class="sm:col-span-3">
                             <FormLabel for="site_type"> Site Type </FormLabel>
 
-                            <div class="mt-1">
-                                <select
-                                    id="site_type"
-                                    name="site_type"
-                                    v-model="formData.site_type"
-                                    autocomplete="site_type"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
-                                >
-                                    <option>all</option>
-                                    <option>responsive</option>
-                                    <option>user_first</option>
-                                </select>
-                            </div>
+                            <FormInputSelect
+                                id="site_type"
+                                v-model="formData.site_type"
+                                :options="options.site_type"
+                                :selectedKey="formData.site_type"
+                            />
                         </div>
 
                         <div class="sm:col-span-4">
@@ -378,25 +154,12 @@
 
                         <div class="sm:col-span-4">
                             <FormLabel for="team"> Team </FormLabel>
-                            <div class="mt-1">
-                                <input
-                                    id="team"
-                                    name="team"
-                                    v-model="formData.team"
-                                    type="text"
-                                    autocomplete="module"
-                                    class="
-                                        shadow-sm
-                                        focus:ring-indigo-500
-                                        focus:border-indigo-500
-                                        block
-                                        w-full
-                                        sm:text-sm
-                                        border-gray-300
-                                        rounded-md
-                                    "
-                                />
-                            </div>
+
+                            <FormInputSelect
+                                v-model="formData.team"
+                                :options="options.team"
+                                :selectedKey="formData.team"
+                            />
                         </div>
                     </div>
                 </div>
@@ -549,7 +312,8 @@ import {
 import FormLabel from "../components/FormLabel.vue";
 import FormTextArea from "../components/FormTextArea.vue";
 import FormInputText from "../components/FormInputText.vue";
-import FormInputSelect from "../components/FormRadioGroup.vue";
+import FormRadioGroup from "../components/FormRadioGroup.vue";
+import FormInputSelect from "../components/FormInputSelect.vue";
 
 export default {
     components: {
@@ -561,6 +325,7 @@ export default {
         FormLabel,
         FormTextArea,
         FormInputText,
+        FormRadioGroup,
         FormInputSelect,
     },
     computed: {
@@ -588,19 +353,89 @@ export default {
             isOpen: false,
             output: "",
             formData: {
-                description: "text",
+                description: "",
                 link: "",
-                description_type: "addition",
+                description_type: "internal",
                 site_type: "all",
                 release_priority: "p3",
                 cdesecurity: "not impacted",
                 privacy: "not impacted",
                 complexity: "simple",
-                team: "optimisation",
+                team: this.$route.query.team || "optimisation",
                 device_type: "all",
                 module: "core",
             },
             options: {
+                impacted: [
+                    {
+                        id: "not impacted",
+                        label: "Not Impacted",
+                    },
+                    {
+                        id: "impacted",
+                        label: "Impacted",
+                    },
+                ],
+                complexity: [
+                    {
+                        id: "simple",
+                        label: "Simple",
+                    },
+                    {
+                        id: "complex",
+                        label: "Complex",
+                    },
+                ],
+                site_type: [
+                    {
+                        id: "all",
+                        label: "All",
+                    },
+                    {
+                        id: "responsive",
+                        label: "Responsive",
+                    },
+                    {
+                        id: "user_first",
+                        label: "User First",
+                    },
+                ],
+                priority: [
+                    {
+                        id: "p1",
+                        label: "P1",
+                    },
+                    {
+                        id: "p2",
+                        label: "P2",
+                    },
+                    {
+                        id: "p3",
+                        label: "P3",
+                    },
+                ],
+                device_type: [
+                    {
+                        id: "all",
+                        label: "All",
+                    },
+                    {
+                        id: "desktop",
+                        label: "Desktop",
+                    },
+                    {
+                        id: "mobile",
+                        label: "Mobile",
+                    },
+                    {
+                        id: "tablet",
+                        label: "Tablet",
+                    },
+                    {
+                        id: "cli",
+                        label: "CLI",
+                    },
+                ],
                 description_type: [
                     {
                         id: "internal",
@@ -611,6 +446,20 @@ export default {
                         id: "addition",
                         label: "Addition",
                         description: "random string goes here",
+                    },
+                ],
+                team: [
+                    {
+                        id: "optimisation",
+                        label: "Optimisation Team",
+                    },
+                    {
+                        id: "projects",
+                        label: "Projects",
+                    },
+                    {
+                        id: "systems_engineering",
+                        label: "Systems Engineering",
                     },
                 ],
             },
