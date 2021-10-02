@@ -450,8 +450,64 @@ export default {
                 ],
                 team: [
                     {
+                        id: "api",
+                        label: "API Team",
+                    },
+                    {
+                        id: "architects",
+                        label: "Architects",
+                    },
+                    {
+                        id: "checkout",
+                        label: "Checkout Team",
+                    },
+                    {
+                        id: "client_features",
+                        label: "Client Features",
+                    },
+                    {
+                        id: "core_product",
+                        label: "Core Product",
+                    },
+                    {
+                        id: "customer_ar",
+                        label: "Customer AR Team",
+                    },
+                    {
+                        id: "epos",
+                        label: "EPOS team",
+                    },
+                    {
+                        id: "mobile_app",
+                        label: "Mobile App Team",
+                    },
+                    {
+                        id: "multi_channel",
+                        label: "Multi Channel Team",
+                    },
+                    {
                         id: "optimisation",
                         label: "Optimisation Team",
+                    },
+                    {
+                        id: "partnerships",
+                        label: "Partnerships",
+                    },
+                    {
+                        id: "platform",
+                        label: "Platform",
+                    },
+                    {
+                        id: "pm_build",
+                        label: "PM Build",
+                    },
+                    {
+                        id: "pm_testing",
+                        label: "PM Testing",
+                    },
+                    {
+                        id: "product_discovery",
+                        label: "Product Discovery Team",
                     },
                     {
                         id: "projects",
