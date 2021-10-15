@@ -9,7 +9,7 @@
   "dependencies": {
     "vue": "^3.2.20",
     "vue-clipboard2": "^0.3.3",
-    "vue-router": "^4.0.11"
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@headlessui/vue": "^1.4.1",
