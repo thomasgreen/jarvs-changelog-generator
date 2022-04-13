@@ -452,6 +452,10 @@ export default {
                         id: "cli",
                         label: "CLI",
                     },
+                    {
+                      id: "other",
+                      label: "Other",
+                    },
                 ],
                 description_type: [
                     {
@@ -511,6 +515,10 @@ export default {
                         label: "Customer AR Team",
                     },
                     {
+                      id: "dependencies",
+                      label: "Dependencies",
+                    },
+                    {
                         id: "epos",
                         label: "EPOS team",
                     },
@@ -529,6 +537,10 @@ export default {
                     {
                         id: "partnerships",
                         label: "Partnerships",
+                    },
+                    {
+                      id: "payments",
+                      label: "Payments",
                     },
                     {
                         id: "platform",
@@ -553,6 +565,10 @@ export default {
                     {
                         id: "systems_engineering",
                         label: "Systems Engineering",
+                    },
+                    {
+                      id: "value_added",
+                      label: "Value Added",
                     },
                 ],
             },
