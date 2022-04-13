@@ -249,7 +249,6 @@
                                     text-left
                                     align-middle
                                     transition-all
-                                    transform
                                     bg-white
                                     shadow-xl
                                     rounded-2xl
