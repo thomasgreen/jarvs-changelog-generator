@@ -518,6 +518,10 @@ export default {
                       label: "Dependencies",
                     },
                     {
+                      id: "devops",
+                      label: "DevOps",
+                    },
+                    {
                         id: "epos",
                         label: "EPOS team",
                     },
@@ -560,10 +564,6 @@ export default {
                     {
                         id: "projects",
                         label: "Projects",
-                    },
-                    {
-                        id: "systems_engineering",
-                        label: "Systems Engineering",
                     },
                     {
                       id: "value_added",
