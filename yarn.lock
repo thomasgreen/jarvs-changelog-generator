@@ -62,89 +62,89 @@
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-2.3.1.tgz#5f286b8d3515381c6d5c8fa8eee5e6335f727e14"
 
-"@vue/compiler-core@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.2.32.tgz"
+"@vue/compiler-core@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-core/-/compiler-core-3.2.37.tgz#b3c42e04c0e0f2c496ff1784e543fbefe91e215a"
   dependencies:
     "@babel/parser" "^7.16.4"
-    "@vue/shared" "3.2.32"
+    "@vue/shared" "3.2.37"
     estree-walker "^2.0.2"
     source-map "^0.6.1"
 
-"@vue/compiler-dom@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.2.32.tgz"
+"@vue/compiler-dom@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-dom/-/compiler-dom-3.2.37.tgz#10d2427a789e7c707c872da9d678c82a0c6582b5"
   dependencies:
-    "@vue/compiler-core" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/shared" "3.2.37"
 
-"@vue/compiler-sfc@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.2.32.tgz"
+"@vue/compiler-sfc@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-sfc/-/compiler-sfc-3.2.37.tgz#3103af3da2f40286edcd85ea495dcb35bc7f5ff4"
   dependencies:
     "@babel/parser" "^7.16.4"
-    "@vue/compiler-core" "3.2.32"
-    "@vue/compiler-dom" "3.2.32"
-    "@vue/compiler-ssr" "3.2.32"
-    "@vue/reactivity-transform" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/compiler-dom" "3.2.37"
+    "@vue/compiler-ssr" "3.2.37"
+    "@vue/reactivity-transform" "3.2.37"
+    "@vue/shared" "3.2.37"
     estree-walker "^2.0.2"
     magic-string "^0.25.7"
     postcss "^8.1.10"
     source-map "^0.6.1"
 
-"@vue/compiler-ssr@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/compiler-ssr/-/compiler-ssr-3.2.32.tgz"
+"@vue/compiler-ssr@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/compiler-ssr/-/compiler-ssr-3.2.37.tgz#4899d19f3a5fafd61524a9d1aee8eb0505313cff"
   dependencies:
-    "@vue/compiler-dom" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/compiler-dom" "3.2.37"
+    "@vue/shared" "3.2.37"
 
 "@vue/devtools-api@^6.0.0":
   version "6.1.4"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.1.4.tgz#b4aec2f4b4599e11ba774a50c67fa378c9824e53"
 
-"@vue/reactivity-transform@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/reactivity-transform/-/reactivity-transform-3.2.32.tgz"
+"@vue/reactivity-transform@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity-transform/-/reactivity-transform-3.2.37.tgz#0caa47c4344df4ae59f5a05dde2a8758829f8eca"
   dependencies:
     "@babel/parser" "^7.16.4"
-    "@vue/compiler-core" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/compiler-core" "3.2.37"
+    "@vue/shared" "3.2.37"
     estree-walker "^2.0.2"
     magic-string "^0.25.7"
 
-"@vue/reactivity@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.2.32.tgz"
+"@vue/reactivity@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/reactivity/-/reactivity-3.2.37.tgz#5bc3847ac58828e2b78526e08219e0a1089f8848"
   dependencies:
-    "@vue/shared" "3.2.32"
+    "@vue/shared" "3.2.37"
 
-"@vue/runtime-core@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/runtime-core/-/runtime-core-3.2.32.tgz"
+"@vue/runtime-core@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/runtime-core/-/runtime-core-3.2.37.tgz#7ba7c54bb56e5d70edfc2f05766e1ca8519966e3"
   dependencies:
-    "@vue/reactivity" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/reactivity" "3.2.37"
+    "@vue/shared" "3.2.37"
 
-"@vue/runtime-dom@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/runtime-dom/-/runtime-dom-3.2.32.tgz"
+"@vue/runtime-dom@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/runtime-dom/-/runtime-dom-3.2.37.tgz#002bdc8228fa63949317756fb1e92cdd3f9f4bbd"
   dependencies:
-    "@vue/runtime-core" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/runtime-core" "3.2.37"
+    "@vue/shared" "3.2.37"
     csstype "^2.6.8"
 
-"@vue/server-renderer@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/server-renderer/-/server-renderer-3.2.32.tgz"
+"@vue/server-renderer@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/server-renderer/-/server-renderer-3.2.37.tgz#840a29c8dcc29bddd9b5f5ffa22b95c0e72afdfc"
   dependencies:
-    "@vue/compiler-ssr" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/compiler-ssr" "3.2.37"
+    "@vue/shared" "3.2.37"
 
-"@vue/shared@3.2.32":
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.2.32.tgz"
+"@vue/shared@3.2.37":
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.37.tgz#8e6adc3f2759af52f0e85863dfb0b711ecc5c702"
 
 acorn-node@^1.6.1:
   version "1.8.2"
@@ -703,15 +703,15 @@ vue-router@^4.0.16:
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
-vue@^3.2.32:
-  version "3.2.32"
-  resolved "https://registry.npmjs.org/vue/-/vue-3.2.32.tgz"
+vue@^3.2.37:
+  version "3.2.37"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.37.tgz#da220ccb618d78579d25b06c7c21498ca4e5452e"
   dependencies:
-    "@vue/compiler-dom" "3.2.32"
-    "@vue/compiler-sfc" "3.2.32"
-    "@vue/runtime-dom" "3.2.32"
-    "@vue/server-renderer" "3.2.32"
-    "@vue/shared" "3.2.32"
+    "@vue/compiler-dom" "3.2.37"
+    "@vue/compiler-sfc" "3.2.37"
+    "@vue/runtime-dom" "3.2.37"
+    "@vue/server-renderer" "3.2.37"
+    "@vue/shared" "3.2.37"
 
 xtend@^4.0.2:
   version "4.0.2"
