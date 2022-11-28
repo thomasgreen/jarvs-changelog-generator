@@ -3,7 +3,7 @@
     <input
         :id="name"
         :name="name"
-        type="text"
+        :type="type"
         :value="modelValue"
         @input="$emit('update:modelValue', $event.target.value)"
         v-bind="$attrs"
@@ -30,6 +30,10 @@ export default {
         name: {
             type: String,
         },
+      type: {
+          type: String,
+        default: 'text'
+      }
     },
 };
 </script>

@@ -55,6 +55,16 @@
                             />
                         </FormInputWrapper>
 
+                      <FormInputWrapper>
+                        <FormLabel for="link"> Ticket </FormLabel>
+                        <FormInputText
+                            name="ticket"
+                            type="number"
+                            v-model="formData.ticket"
+                            autocomplete="ticket"
+                        />
+                      </FormInputWrapper>
+
                         <FormInputWrapper>
                             <FormLabel for="module"> Module </FormLabel>
 
@@ -358,6 +368,10 @@ export default {
                     continue;
                 }
 
+                if (value === '') {
+                  continue;
+                }
+
                 string += "@" + key + " " + value + "\n";
             }
             return string;
@@ -372,6 +386,7 @@ export default {
                 description: "",
                 link: "",
                 description_type: "internal",
+                ticket: "",
                 site_type: "all",
                 release_priority: "p3",
                 cdesecurity: "not impacted",
