@@ -8,7 +8,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "vue": "^3.2.32",
+    "vue": "^3.2.45",
     "vue-clipboard2": "^0.3.3",
     "vue-router": "^4.0.16"
   },
