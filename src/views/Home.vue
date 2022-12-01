@@ -331,7 +331,7 @@ export default {
         description_type: "internal",
         ticket: "",
         site_type: "all",
-        release_priority: "p3",
+        release_priority: this.$route.query.priority || "p3",
         cdesecurity: "not impacted",
         privacy: "not impacted",
         complexity: "simple",
