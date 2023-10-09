@@ -175,6 +175,19 @@
                 :selected-key="formData.complexity"
               />
             </FormInputWrapper>
+
+            <FormInputWrapper>
+              <FormLabel for="cacheclearrequired">
+                Cache Clear Required?
+              </FormLabel>
+
+              <FormRadioGroup
+                id="cacheclearrequired"
+                v-model="formData.cacheclearrequired"
+                :options="options.cacheclearrequired"
+                :selected-key="formData.cacheclearrequired"
+              />
+            </FormInputWrapper>
           </FormInputGroup>
         </div>
 
@@ -338,6 +351,7 @@ export default {
         team: this.$route.query.team || "optimisation",
         device_type: "all",
         module: "core",
+        cacheclearrequired: "no",
       },
       options: {
         impacted: [
@@ -358,6 +372,16 @@ export default {
           {
             id: "complex",
             label: "Complex",
+          },
+        ],
+        cacheclearrequired: [
+          {
+            id: "yes",
+            label: "Yes",
+          },
+          {
+            id: "no",
+            label: "No",
           },
         ],
         site_type: [
